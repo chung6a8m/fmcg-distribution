@@ -1,5 +1,7 @@
 # Agent / Codex instructions — FMCG Distribution
 
+
+**Baseline đang sử dụng:** xem [BASELINE-v1.0.md](BASELINE-v1.0.md) và tham chiếu commit cố định cho business v1.0; không coi nhãn candidate thời điểm biên soạn B01/B02 là bản chưa thể dùng để phát triển. Freeze thuộc DOC/MODEL, không đồng nghĩa Product Verification/Go-Live.
 Mục tiêu: hỗ trợ **solo developer** xây sản phẩm bằng vertical slices theo đặc tả nghiệp vụ, không tạo thêm tầng quy trình/hạ tầng khi chưa cần.
 
 ## Quy tắc đọc

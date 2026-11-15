@@ -1,5 +1,8 @@
 # FMCG Distribution — Business-first
 
+
+**Business Baseline v1.0 (tài liệu, cố định theo commit):** [BASELINE-v1.0.md](BASELINE-v1.0.md). Business v1.0 được freeze để dùng làm đầu vào implementation, không phải Product Verification hoặc Tenant Go-Live.
+
 **Một nơi làm việc cho solo developer:** đặc tả nghiệp vụ là nguồn yêu cầu; công nghệ, kiến trúc và mã nguồn chỉ được bổ sung khi bắt đầu triển khai.
 
 ## Bắt đầu từ đâu?
