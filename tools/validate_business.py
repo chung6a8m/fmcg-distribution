@@ -43,7 +43,7 @@ rules = {"BR-" + x for x in ids_from_table(
 policies = {"POL-" + x for x in ids_from_table(
     "business/policies.md", r"^\|\s*POL-(\d{2})\s*\|")}
 approvals = {"AP-" + x for x in ids_from_table(
-    "business/roles-and-approvals.md", r"^\|\s*AP-(\d{2})\s*\|")}
+    "business/roles-and-approvals.md", r"^\|\s*AP-(\d{2})(?:\s|\|)")}
 acceptance = {"AC-" + x for x in ids_from_table(
     "business/acceptance.md", r"^\|\s*\*\*AC-(\d{2})\*\*\s*\|")}
 decision_text = (BIZ / "decisions.md").read_text(encoding="utf-8")
