@@ -18,7 +18,7 @@
 | Truy vết ID | [traceability.md](traceability.md) |
 | Kiểm xuất xứ khi có nghi ngờ | [provenance.md](provenance.md) |
 
-**Giai đoạn B02:** bổ sung calculations, reference-data/scenarios và acceptance (không coi chúng đã tồn tại trong PR B01).
+**B02 candidate:** [công thức](calculations.md), [21 acceptance criteria](acceptance.md), [golden data](reference-data/README.md), [hướng dẫn kiểm chứng](validation-guide.md) và [change log](CHANGELOG.md). Không coi những file này đã được Owner chấp nhận chỉ vì có mặt trong PR.
 
 ## Cách hiểu mức độ bắt buộc
 

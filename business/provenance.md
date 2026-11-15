@@ -24,7 +24,7 @@
 | MAP-01 | D-01 trước đây chọn 1 DB/tenant; bản business chỉ buộc isolation và seller ownership. Quyết định DB được bảo toàn trong hồ sơ lịch sử, cần xác nhận khi chọn stack. | REVIEW_ON_IMPLEMENTATION |
 | MAP-02 | PWA/web trước đây được nêu như kênh UI; business giữ hành vi ngoài hiện trường, sync/offline theo gate. | REVIEW_ON_IMPLEMENTATION |
 | MAP-03 | Durable inbox/outbox, SQL transaction, IDs/hash được dịch thành yêu cầu nhận bền/chống trùng/atomic và truy vết. | TECHNICAL_DESIGN_PENDING |
-| MAP-04 | R009/R010 có 22 AC và evidence; business B02 phải dùng cùng ID/expected, không tự nâng MODEL_ONLY. | B02_PENDING |
+| MAP-04 | R009/R010 có 22 AC và evidence; business B02 đã bổ sung cùng ID/expected ở mức candidate, không tự nâng MODEL_ONLY. | B02_CANDIDATE |
 | MAP-05 | Thuế suất, invoice provider, seller profile, ngưỡng SLA/approval chưa xác minh thực; không tạo giá trị mặc định từ fixtures. | INPUT_OR_EVIDENCE_PENDING |
 
 **Không có thay đổi ngữ nghĩa nào của baseline nguồn được tự tuyên bố Owner-approved trong PR này.**

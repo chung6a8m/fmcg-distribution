@@ -42,7 +42,7 @@ Giá trị xuất cần có sourceCostVersion để trả hàng theo **giá tr�
 
 **Lưu ý thiết kế:** thứ tự khóa giao dịch, phần dư rounding và cơ chế đồng thời là vấn đề implementation cần kiểm tra; không mặc định thuật toán/tables/transaction engine đã được phê duyệt tại business baseline.
 
-## 4. Giá bán, discount và VAT — BR-08/19
+## 4. Giá bán, discount và VAT — BR-08
 
 Bộ rule tự động hữu hạn: **list price, customer group, fixed discount, percentage discount, gift threshold**. Thứ tự áp dụng/tie-break, hiệu lực, điều kiện thuế và cách tính giá gồm/chưa thuế phải ghi trong snapshot phiên bản đã duyệt. Không chạy script giá tùy tiện hay tự cộng nhiều rule khi precedence chưa rõ.
 
