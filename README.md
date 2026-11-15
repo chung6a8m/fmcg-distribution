@@ -10,7 +10,7 @@
 4. [Nguồn gốc và mức độ chấp nhận](business/provenance.md) — cách bảo toàn quyết định được phê duyệt.
 5. [AGENTS.md](AGENTS.md) — cách Codex/AI làm việc với baseline.
 
-**Trạng thái repository:** đang biên tập **Business Baseline v1 candidate**, chưa phê duyệt bản diễn giải mới; chưa có tech stack, source ứng dụng hay bằng chứng kiểm thử ứng dụng. B02 sẽ bổ sung công thức, golden data và acceptance test.
+**Trạng thái repository:** đang biên tập **Business Baseline v1 candidate**, chưa phê duyệt bản diễn giải mới; chưa có tech stack, source ứng dụng hay bằng chứng kiểm thử ứng dụng. B02 bổ sung [công thức](business/calculations.md), [21 ca nghiệm thu](business/acceptance.md) và [golden data](business/reference-data/README.md) trong PR kế tiếp.
 
 ## Nguyên tắc
 
