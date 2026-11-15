@@ -1,32 +1,32 @@
-# Agent / Codex instructions — FMCG Distribution
+# Agent / Codex instructions — Canonical FMCG Business
 
+## Vai trò và giới hạn repository
 
-**Baseline đang sử dụng:** xem [BASELINE-v1.0.md](BASELINE-v1.0.md) và tham chiếu commit cố định cho business v1.0; không coi nhãn candidate thời điểm biên soạn B01/B02 là bản chưa thể dùng để phát triển. Freeze thuộc DOC/MODEL, không đồng nghĩa Product Verification/Go-Live.
-Mục tiêu: hỗ trợ **solo developer** xây sản phẩm bằng vertical slices theo đặc tả nghiệp vụ, không tạo thêm tầng quy trình/hạ tầng khi chưa cần.
+Repository `chung6a8m/fmcg-distribution` là **nguồn chuẩn của Business Baseline**, độc lập với công nghệ. Không dùng repository này làm nơi triển khai ứng dụng hoặc quản lý delivery.
 
-## Quy tắc đọc
+- **Baseline hiện hành:** `BUSINESS-v1.0`, `BUSINESS_V1_FROZEN_FOR_IMPLEMENTATION` ở mức **DOC/MODEL**; xem [BASELINE-v1.0.md](BASELINE-v1.0.md).
+- **Snapshot cố định:** commit `88d70b3be72f34011b49b0de265ad2c43202492f`, Git tree `business/` = `c9a4164a99ea57e1d5f9bc8711285c6d3705f8e3`.
+- **Không tạo ở đây:** `src/`, `tests/` ứng dụng, `delivery/`, thiết kế/cấu hình tech stack, cơ sở hạ tầng, ứng dụng chạy thử hoặc roadmap implementation.
+- **Không diễn giải lại v1.0:** nhãn `candidate` trong file thuộc lịch sử biên soạn. Freeze để làm đầu vào không phải kiểm chứng E2E, duyệt pháp lý/provider hoặc Tenant Go-Live.
 
-1. Đọc business/README.md, business/scope.md và nhóm quy tắc, luồng liên quan tới yêu cầu hiện tại.
-2. Khi triển khai, đọc business/calculations.md, business/acceptance.md và golden data nếu các file đã tồn tại; nếu chưa thì ghi thiếu rõ ràng.
-3. Các link nguồn ở business/provenance.md chỉ phục vụ truy xuất lịch sử; tuyệt đối không yêu cầu người thực hiện mở lại R001–R010 để hiểu behavior thông thường.
-4. Ưu tiên phạm vi A Online trước, sau đó B_ONLINE và Mixed; chỉ mở offline/mode production khi đạt gate tương ứng.
+## Khi đọc hợp đồng nghiệp vụ
 
-## Quyền thay đổi
+1. Bắt đầu từ [business/README.md](business/README.md), [business/scope.md](business/scope.md), rồi đọc đúng BR/POL/SOP/AC liên quan.
+2. Dùng [business/calculations.md](business/calculations.md), [business/acceptance.md](business/acceptance.md) và [business/reference-data/](business/reference-data/) làm expected độc lập với implementation.
+3. [business/provenance.md](business/provenance.md) chỉ để tra cứu lịch sử; không yêu cầu mở repo nghiên cứu để hiểu hành vi v1.0.
+4. Khi cần code, làm việc ở **repository ứng dụng khác** có snapshot của baseline được ghim bằng source commit và business tree SHA. Không tạo phụ thuộc Git submodule hoặc đồng bộ tự động nếu chưa được Owner chọn.
 
-- business/ là **normative business contract** khi được Owner chấp nhận. Không sửa quy tắc chỉ để khiến code/test PASS.
-- Mọi thay đổi ngữ nghĩa cần nêu ID quy tắc liên quan, trước/sau, lý do, ảnh hưởng oracle và yêu cầu Owner review.
-- Trạng thái quyết định nguồn phải giữ nguyên; không tự nâng DRAFT thành APPROVED, MODEL_ONLY thành VERIFIED hoặc cấp Go-Live.
-- Không tự chọn tech stack, kiến trúc, nhà cung cấp, môi trường production hoặc tự mở security gate khi chưa có lựa chọn rõ ràng.
-- Không tự merge PR, tạo approval, ký chuyên môn hoặc thay đổi repository nghiên cứu.
+## Thay đổi nghiệp vụ có kiểm soát
 
-## Workflow gọn
+- **V1.0 bất biến:** không sửa `business/**` của snapshot v1.0 chỉ để khiến tests hoặc code PASS.
+- Mọi đề xuất thay đổi ngữ nghĩa cần chỉ rõ ID D/PADR/EVQ/BR/POL/SOP/AC, nội dung trước/sau, lý do, impact lên scenario/golden results và quyết định Owner.
+- Thay đổi có hiệu lực phải có version baseline mới, được review/acceptance riêng. Không mặc định thay đổi canonical sẽ tự áp vào các implementation.
+- Chỉ sửa các file ngoài `business/` để làm rõ chỉ dẫn/manifest nếu không thay đổi nghĩa và vẫn giữ snapshot đã freeze.
+- Không tự merge PR, giả lập approval, ký chuyên môn, nâng `MODEL_ONLY` thành `VERIFIED`, mở mode/security gate hay sửa repository nghiên cứu.
 
-Business rule → scenario/expected → đề xuất implementation → code/test → PR/evidence. Mỗi vertical slice ghi: scope, ID quy tắc, acceptance, negative cases, kết quả actual/expected, pending. Bất cứ thứ gì chưa chạy trên hệ thật phải được gọi đúng tên **NOT_RUN/MODEL_ONLY**.
+## Kiểm tra và chất lượng
 
-## Thuật ngữ quan trọng
-
-Một người bán/tenant; Customer chịu công nợ, Outlet tùy chọn, ShipTo chụp theo chứng từ; chuyển kho→xe không phải bán; A giữ hàng riêng B quota; công nợ Customer, tiền nhân viên giữ hộ, tạm ứng là ba sổ khác nhau. P0 của stock/cutover/idempotency/ledger/invoice không được miễn trừ để Go-Live.
-
-## Chất lượng tài liệu
-
-Tài liệu bằng tiếng Việt; ID ổn định (D-xx, PADR-xx, EVQ-xx, BR-xx, POL-xx, SOP-xx, AC-xx). Số liệu giả lập ghi rõ SYNTHETIC. Dùng đường dẫn nội bộ tương đối; UTF-8/LF; sửa tối thiểu, không tạo nhiều file rỗng. Không đặt giá trị VAT/tỷ lệ thị trường/độ trễ/SLO giả định thành mặc định áp dụng thực.
+- Chạy `python3 tools/validate_business.py` cho mọi PR thay đổi tài liệu; CI hiện tại **chỉ** là kiểm tra DOC/MODEL.
+- Kiểm tra Git tree `business/` vẫn khớp snapshot khi chỉ sửa tài liệu quản trị tại root.
+- Giữ tiếng Việt, ID ổn định, UTF-8/LF, link tương đối, số liệu mẫu gắn `SYNTHETIC`.
+- Không suy VAT, threshold, SLO, seller/provider hay bằng chứng production từ fixture; P0 G-STOCK/G-CUT/G-IDEMP/G-LEDGER/G-INV không được miễn trừ khi Go-Live.

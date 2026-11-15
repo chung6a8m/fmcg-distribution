@@ -39,7 +39,7 @@ Người dùng đã yêu cầu thực hiện chuỗi **review B01 → merge → 
 
 ## 5. Quy tắc phát triển sau freeze
 
-1. Khi bắt đầu VS-01, Codex dùng **snapshot v1.0** này để suy business acceptance, tạo `delivery/`, `src/`, `tests/` bằng tech stack được Owner chọn.
+1. Khi bắt đầu VS-01 **tại repository ứng dụng độc lập**, Codex dùng **snapshot v1.0** này để suy business acceptance. Các thư mục `delivery/`, `src/`, `tests/` và quyết định tech stack chỉ được tạo tại repository ứng dụng, **không** tại repository canonical này.
 2. Thay đổi câu chữ không ảnh hưởng ngữ nghĩa có thể là docs patch; thay đổi BR/SOP/AC/expected phải có change record và version mới, không sửa ngầm golden v1.0.
 3. Golden oracle ở v1.0 là nguồn expected độc lập; không lấy kết quả code làm chuẩn để thay lại test.
 4. Có thể tạo Git tag `business-v1.0.0` trỏ trực tiếp `88d70b3be72f34011b49b0de265ad2c43202492f` bằng Git sau khi đối chiếu; **hồ sơ này không tuyên bố tag đã tồn tại**.
