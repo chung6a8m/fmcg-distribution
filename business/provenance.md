@@ -6,7 +6,7 @@
 - **Product Contract C′ đã chấp nhận:** [commit eb9c4b04e334530367b80ea4178edb4dd4a07491](https://github.com/chung6a8m/research-sme-phan-phoi-hang-tieu-dung/commit/eb9c4b04e334530367b80ea4178edb4dd4a07491)
 - **Owner Acceptance record:** [PR #2 — comment phê duyệt](https://github.com/chung6a8m/research-sme-phan-phoi-hang-tieu-dung/pull/2#issuecomment-6866595994), ghi nhận phạm vi PRODUCT_POLICY_AND_CONTRACT_ONLY.
 - **Record metadata:** [acceptance-record-r](https://github.com/chung6a8m/research-sme-phan-phoi-hang-tieu-dung/tree/main/reports/2026-11-13-10-product-reference-go-live-blueprint/s5/acceptance-record-r) xác nhận 6 role-scoped refs **không phải 6 reviewer độc lập**.
-- **Nguồn nghiệp vụ cốt lõi:** R009 — D-01..15, BR-01..24, DC-01..18, AC-01..22, EV-01..15 và R010 — PADR-01..09, EVQ-01..07, POL/CFG, SOP-01..12. Không coi câu chữ R008/R009 trước khi cập nhật chính sách là ưu tiên cao hơn Contract C′.
+- **Nguồn nghiệp vụ cốt lõi:** R009 — D-01..15, BR-01..24, DC-01..18, AC-01..21, EV-01..15 và R010 — PADR-01..09, EVQ-01..07, POL/CFG, SOP-01..12. Không coi câu chữ R008/R009 trước khi cập nhật chính sách là ưu tiên cao hơn Contract C′.
 - **Ràng buộc nguồn:** việc ký Product Contract C′ không chấp nhận tự động mọi cách diễn đạt mới trong repository này.
 
 ## 2. Nguyên tắc biên tập
