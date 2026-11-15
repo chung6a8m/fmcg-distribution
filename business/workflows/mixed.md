@@ -6,7 +6,7 @@
 
 ## Bắt đầu chuyến
 
-1. Xác định AOrder/ARerservation theo source line/lot và BQuota từ tồn chưa bị giữ. **Không gán cùng một lượng hàng cho cả A và B**.
+1. Xác định AOrder/AReservation theo source line/lot và BQuota từ tồn chưa bị giữ. **Không gán cùng một lượng hàng cho cả A và B**.
 2. Kiểm chứng từ nguồn, FEFO, stock available; chuyển hàng kho→xe theo manifest A và B riêng, chưa ghi doanh thu/AR/COGS.
 3. Cấp một người viết có quyền theo chuyến; lái xe có thể khác người giao hàng, quyền không suy từ chức danh.
 
